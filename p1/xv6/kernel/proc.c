@@ -25,6 +25,28 @@ pinit(void)
   initlock(&ptable.lock, "ptable");
 }
 
+
+
+// This function acquires the lock, counts the number of processes,
+// returns the number of the processes that are not UNUSED
+int number_of_procs(void)
+{
+  int i = 0;
+  struct proc *p;
+ 
+  acquire(&ptable.lock);
+  
+  for (p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    if (p->state != UNUSED){
+      i++;  
+    }
+  }
+  
+  release(&ptable.lock);
+
+  return i;
+}
+
 // Look in the process table for an UNUSED proc.
 // If found, change state to EMBRYO and initialize
 // state required to run in the kernel.

@@ -89,13 +89,13 @@ sys_uptime(void)
   return xticks;
 }
 
+// SUHASINI
 int
 sys_getprocs(void)
 {
   int i;
-
-  for (i = 0; i < NPROC ; i++){
-  }
+  
+  i = number_of_procs();
 
   return i;
 }
