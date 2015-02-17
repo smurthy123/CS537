@@ -109,7 +109,7 @@ void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
 void            yield(void);
-int             number_of_procs(void); // SUHASINI
+//int             number_of_procs(void); // SUHASINI
 
 // swtch.S
 void            swtch(struct context**, struct context*);

@@ -6,6 +6,7 @@
 #include "proc.h"
 #include "sysfunc.h"
 
+extern int number_of_procs(void);
 int
 sys_fork(void)
 {
